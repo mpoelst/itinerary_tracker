@@ -1,0 +1,61 @@
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Day #<%= @day.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+              <dt>Lodging address</dt>
+              <dd><%= @day.lodging_address %></dd>
+
+              <dt>Events</dt>
+              <dd><%= @day.events %></dd>
+
+              <dt>Origin location</dt>
+              <dd><%= @day.origin_location_id %></dd>
+
+              <dt>Transportation</dt>
+              <dd><%= @day.transportation %></dd>
+
+              <dt>Arrival date</dt>
+              <dd><%= @day.arrival_date %></dd>
+
+              <dt>Notes</dt>
+              <dd><%= @day.notes %></dd>
+
+              <dt>Lodging name</dt>
+              <dd><%= @day.lodging_name %></dd>
+
+              <dt>Itinerary</dt>
+              <dd><%= @day.itinerary_id %></dd>
+
+              <dt>Destination location</dt>
+              <dd><%= @day.destination_location_id %></dd>
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <a href="/days" class="btn btn-primary">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+
+              <a href="/days/<%= @day.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+
+              <a href="/delete_day/<%= @day.id %>" class="btn btn-danger" rel="nofollow">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->
