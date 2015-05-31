@@ -37,12 +37,13 @@
         </div>
       </div>
 
-      <ul>
-        <% @itinerary.days.each do |day| %>
-        <li><%= day.lodging_address %></li>
+      <% @itinerary.days.each do |day| %>
+      <table>
+        <tr><%= day.lodging_address %></tr>
+          <td colspan="3"><%= day.lodging_name %></td>
+          <td colspan="3"><%= day.events %></td>
         <% end %>
-      </ul>
-
+      </table>
       <!-- Validation failure messages -->
 
       <% @day = Day.new %>
