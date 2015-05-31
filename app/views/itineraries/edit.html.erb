@@ -1,12 +1,12 @@
 <!-- Validation failure messages -->
 
 <% if @itinerary.errors.any? %>
-  <% @itinerary.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
+<% @itinerary.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
 <% end %>
 
 <!-- Responsive panel example -->
@@ -63,6 +63,136 @@
           </div>
         </form>
       </div>
+      <ul>
+        <% @itinerary.days.each do |day| %>
+        <li><%= day.lodging_address %></li>
+        <% end %>
+      </ul>
+
+      <!-- Validation failure messages -->
+
+      <% @day = Day.new %>
+
+      <% if @day.errors.any? %>
+      <% @day.errors.full_messages.each do |message| %>
+      <div class="alert alert-dismissable alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= message %>
+      </div>
+      <% end %>
+      <% end %>
+
+      <!-- Responsive panel example -->
+
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Add Day</h3>
+            </div>
+            <div class="panel-body">
+              <form action="/create_day" method="post" class="form-horizontal">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+                <!-- Label and input for lodging_address -->
+                <div class="form-group">
+                  <label for="lodging_address" class="col-sm-2 control-label">
+                    Lodging address
+                  </label>
+                  <div class="col-sm-10">
+                    <input type="text" id="lodging_address" name="lodging_address" placeholder="Lodging address" class="form-control" value="<%= @day.lodging_address %>">
+                  </div>
+                </div>
+
+                <!-- Label and input for events -->
+                <div class="form-group">
+                  <label for="events" class="col-sm-2 control-label">
+                    Events
+                  </label>
+                  <div class="col-sm-10">
+                    <textarea id="events" name="events" placeholder="Events" class="form-control" rows="3"><%= @day.events %></textarea>
+                  </div>
+                </div>
+
+                <!-- Label and input for origin_location_id -->
+                <div class="form-group">
+                  <label for="origin_location_id" class="col-sm-2 control-label">
+                    Origin location
+                  </label>
+                  <div class="col-sm-10">
+                    <input type="text" id="origin_location_id" name="origin_location_id" placeholder="Origin location" class="form-control" value="<%= @day.origin_location_id %>">
+                  </div>
+                </div>
+
+                <!-- Label and input for transportation -->
+                <div class="form-group">
+                  <label for="transportation" class="col-sm-2 control-label">
+                    Transportation
+                  </label>
+                  <div class="col-sm-10">
+                    <textarea id="transportation" name="transportation" placeholder="Transportation" class="form-control" rows="3"><%= @day.transportation %></textarea>
+                  </div>
+                </div>
+
+                <!-- Label and input for arrival_date -->
+                <div class="form-group">
+                  <label for="arrival_date" class="col-sm-2 control-label">
+                    Arrival date
+                  </label>
+                  <div class="col-sm-10">
+                    <input type="text" id="arrival_date" name="arrival_date" placeholder="Arrival date" class="form-control" value="<%= @day.arrival_date %>">
+                  </div>
+                </div>
+
+                <!-- Label and input for notes -->
+                <div class="form-group">
+                  <label for="notes" class="col-sm-2 control-label">
+                    Notes
+                  </label>
+                  <div class="col-sm-10">
+                    <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @day.notes %></textarea>
+                  </div>
+                </div>
+
+                <!-- Label and input for lodging_name -->
+                <div class="form-group">
+                  <label for="lodging_name" class="col-sm-2 control-label">
+                    Lodging name
+                  </label>
+                  <div class="col-sm-10">
+                    <textarea id="lodging_name" name="lodging_name" placeholder="Lodging name" class="form-control" rows="3"><%= @day.lodging_name %></textarea>
+                  </div>
+                </div>
+
+                <input type="hidden" id="itinerary_id" name="itinerary_id" placeholder="Itinerary" class="form-control" value="<%= @itinerary.id %>">
+
+                <!-- Label and input for destination_location_id -->
+                <div class="form-group">
+                  <label for="destination_location_id" class="col-sm-2 control-label">
+                    Destination location
+                  </label>
+                  <div class="col-sm-10">
+                    <input type="text" id="destination_location_id" name="destination_location_id" placeholder="Destination location" class="form-control" value="<%= @day.destination_location_id %>">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-success">
+                      Create Day
+                    </button>
+                    or
+                    <a href="/days">Cancel</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- End responsive panel example -->
     </div>
   </div>
 </div>
