@@ -48,7 +48,7 @@
               Origin location
             </label>
             <div class="col-sm-10">
-              <% select_tag(:origin_location_id, options_from_collection_for_select(Location.all, :id, :location_name, @day.origin_location_id), :class => "form-control") %>
+              <%= select_tag(:origin_location_id, options_from_collection_for_select(Location.all, :id, :location_name, @day.origin_location_id), :class => "form-control") %>
             </div>
           </div>
 
@@ -108,7 +108,7 @@
               Destination location
             </label>
             <div class="col-sm-10">
-              <input type="text" id="destination_location_id" name="destination_location_id" placeholder="Destination location" class="form-control" value="<%= @day.destination_location_id %>">
+              <%= select_tag(:destination_location_id, options_from_collection_for_select(Location.all, :id, :location_name, @day.destination_location_id), :class => "form-control") %>
             </div>
           </div>
 

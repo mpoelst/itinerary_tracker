@@ -15,7 +15,7 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new
     @itinerary.start_date = params[:start_date]
     @itinerary.itinerary_name = params[:itinerary_name]
-    @itinerary.user_id = params[:user_id]
+    @itinerary.user_id = current_user.id
 
     if @itinerary.save
       redirect_to "/itineraries", :notice => "Itinerary created successfully."
