@@ -28,7 +28,7 @@
               Start date
             </label>
             <div class="col-sm-10">
-              <input type="text" id="start_date" name="start_date" placeholder="Start date" class="form-control" value="<%= @itinerary.start_date %>">
+              <input type="text" id="start_date" name="start_date" placeholder="Start date" class="form-control" value="<%=  @itinerary.start_date.strftime("%B %e, %Y") %>">
             </div>
           </div>
 

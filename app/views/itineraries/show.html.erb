@@ -11,7 +11,7 @@
           <div class="col-md-12">
             <dl class="dl-horizontal">
               <dt>Start date</dt>
-              <dd><%= @itinerary.start_date %></dd>
+              <dd><%= @itinerary.start_date.strftime("%B %e, %Y") %></dd>
 
               <dt>Itinerary name</dt>
               <dd><%= @itinerary.itinerary_name %></dd>
@@ -37,13 +37,36 @@
         </div>
       </div>
 
-      <% @itinerary.days.each do |day| %>
-      <table>
-        <tr><%= day.lodging_address %></tr>
-          <td colspan="3"><%= day.lodging_name %></td>
-          <td colspan="3"><%= day.events %></td>
+      <div class="table-responsive"  class="btn-group btn-group-justified">
+      <table style="width:100%" cellpadding="10" cellspacing="5" class="table table-striped" class="table table-bordered" class="table table-hover" class="table">
+        <tr>
+          <th scope="col">View</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+          <th scope="col">Arrival Date</th>
+          <th scope="col">Origin Location</th>
+          <th scope="col">Destination Location</th>
+        </tr>
+        <% @itinerary.days.each do |day| %>
+        <tr>
+          <td colspan="1" a href="/days" class="btn btn-primary">
+          <i class="fa fa-search-plus"></i>
+        </a></td>
+         <td colspan="1" a href="/days" class="btn btn-warning">
+          <i class="fa fa-search-edit"></i>
+        </a></td>
+          <td colspan="1" a href="/days" class="btn btn-danger">
+          <i class="fa fa-trash-o"></i>
+        </a></td>
+          <td colspan="1"><%= day.arrival_date%></td>
+          <td colspan="1"><%= day.origin_location_id %></td>
+          <td colspan="1"><%= day.destination_location_id %></td>
+        </tr>
         <% end %>
       </table>
+      </div>
+
+
       <!-- Validation failure messages -->
 
       <% @day = Day.new %>
