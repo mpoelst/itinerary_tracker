@@ -14,12 +14,11 @@
  *= require_self
 *= require bootstrap-datetimepicker
 */
-body {font-family: Arial, Verdana, sans-serif; color: #282828}
-table {width: 1150px}
-th, td {padding: 15px; text-align: center}
-th {border: 3px solid #C0C0C0; text-transform: uppercase; letter-spacing: 0.1m; font-size: 90%; text-align: center;}
-tr.odd {background-color: #E0E0E0;}
-/*tr {background-color: #0088dd;}*/
+body {font-family: Lucida Sans, Lucida Sans, sans-serif; color: #282828}
+table {width: 1150px; border:10px}
+th, td {padding: 10px; text-align: center}
+th {border-bottom: 3px solid #C0C0C0; border-top: 3px solid #C0C0C0; text-transform: uppercase; letter-spacing: 0.1m; font-size: 90%; text-align: center; background-color:#E8E8E8 }
+tr {border-bottom: 1px solid #C0C0C0; border-top: 1px solid #C0C0C0}
 tr:hover {background-color: #c3e6e5;}
 
 

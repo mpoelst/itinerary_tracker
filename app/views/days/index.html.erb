@@ -17,42 +17,37 @@
 
 <div class="row isotope-container">
 <% @days.each do |day| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
-    <div class="panel panel-default">
+  <div class="isotope-item">
+    <div class="panel panel-success">
       <div class="panel-heading">
         <h3 class="panel-title">Day #<%= day.id %></h3>
       </div>
       <div class="panel-body">
-        <dl>
-          <dt>Lodging address</dt>
-          <dd><%= day.lodging_address %></dd>
-
-          <dt>Events</dt>
-          <dd><%= day.events %></dd>
-
-          <dt>Origin location</dt>
-          <dd><%= day.origin_location_id %></dd>
-
-          <dt>Transportation</dt>
-          <dd><%= day.transportation %></dd>
-
-          <dt>Arrival date</dt>
-          <dd><%= day.arrival_date %></dd>
-
-          <dt>Notes</dt>
-          <dd><%= day.notes %></dd>
-
-          <dt>Lodging name</dt>
-          <dd><%= day.lodging_name %></dd>
-
-          <dt>Itinerary</dt>
-          <dd><%= day.itinerary_id %></dd>
-
-          <dt>Destination location</dt>
-          <dd><%= day.destination_location_id %></dd>
-
-        </dl>
-        <div class="btn-group btn-group-justified">
+      <table>
+        <tr>
+          <th>Lodging Address</th>
+          <th>Events</th>
+          <th>Origin Location</th>
+          <th>Transportation</th>
+          <th>Arrival Date</th>
+          <th>Notes</th>
+          <th>Lodging Name</th>
+          <th>Itinerary</th>
+          <th>Destination Location</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td><%= day.lodging_address %></td>
+          <td><%= day.events %></td>
+          <td><%= day.origin_location_id %></td>
+          <td><%= day.transportation %></td>
+          <td><%= day.arrival_date %></td>
+          <td><%= day.notes %></td>
+          <td><%= day.lodging_name %></td>
+          <td><%= day.itinerary_id %></td>
+          <td><%= day.destination_location_id %></td>
+          <td>
+        <div class="btn-group">
           <a href="/days/<%= day.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
           </a>
@@ -65,6 +60,9 @@
             <i class="fa fa-trash-o"></i>
           </a>
         </div>
+        </td>
+        </tr>
+        </table>
       </div>
     </div>
   </div>
