@@ -25,27 +25,27 @@
       <div class="panel-body">
       <table>
         <tr>
-          <th>Lodging Address</th>
-          <th>Events</th>
-          <th>Origin Location</th>
-          <th>Transportation</th>
-          <th>Arrival Date</th>
-          <th>Notes</th>
-          <th>Lodging Name</th>
           <th>Itinerary</th>
+          <th>Arrival Date</th>
+          <th>Origin Location</th>
           <th>Destination Location</th>
+          <th>Lodging Name</th>
+          <th>Lodging Address</th>
+          <th>Transportation</th>
+          <th>Events</th>
+          <th>Notes</th>
           <th>Action</th>
         </tr>
         <tr>
-          <td><%= day.lodging_address %></td>
-          <td><%= day.events %></td>
-          <td><%= day.origin_location_id %></td>
-          <td><%= day.transportation %></td>
-          <td><%= day.arrival_date %></td>
-          <td><%= day.notes %></td>
-          <td><%= day.lodging_name %></td>
           <td><%= day.itinerary_id %></td>
+          <td><%= day.arrival_date %></td>
+          <td><%= day.origin_location_id %></td>
           <td><%= day.destination_location_id %></td>
+          <td><%= day.lodging_name %></td>
+          <td><%= day.lodging_address %></td>
+          <td><%= day.transportation %></td>
+          <td><%= day.events %></td>
+          <td><%= day.notes %></td>
           <td>
         <div class="btn-group">
           <a href="/days/<%= day.id %>" class="btn btn-primary">
