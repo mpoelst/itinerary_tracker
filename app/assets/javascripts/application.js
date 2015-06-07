@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 
-$('#start_date').datepicker();
+//= require moment
+//= require bootstrap-datetimepicker

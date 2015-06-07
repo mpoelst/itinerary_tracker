@@ -12,8 +12,8 @@
  *
  *= require_tree .
  *= require_self
- */
-
+*= require bootstrap-datetimepicker
+*/
 body {font-family: Arial, Verdana, sans-serif; color: #282828}
 table {width: 1150px}
 th, td {padding: 15px; text-align: center}

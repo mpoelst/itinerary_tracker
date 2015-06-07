@@ -45,6 +45,23 @@
           <th>Destination Location</th>
           <th>Action</th>
         </tr>
+          <tr>
+          <div class="row">
+          <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Add Day</h3>
+              </div>
+              <div class="panel-body">
+                <form action="/create_day" method="post" class="form-horizontal">
+                  <!-- Hidden input for authenticity token to protect from forgery -->
+                  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+            </div>
+            </div>
+            </div>
+            </div>
+            </tr>
+
         <% @itinerary.days.each do |day| %>
         <tr>
           <td><%= day.arrival_date%></td>
@@ -53,10 +70,10 @@
           <td><a href="/days/<%= day.id %>" class="btn btn-primary">
           <i class="fa fa-search-plus"></i>
         </a>
-        <a href="/days/<%= day.id %>"" class="btn btn-warning">
+        <a href="/days/<%= day.id %>/edit" class="btn btn-warning">
           <i class="fa fa-edit"></i>
         </a>
-        <a href="/itineraries/<%= @itinerary.id %>" class="btn btn-danger">
+        <a href="/delete_day/<%= day.id %>" class="btn btn-danger">
           <i class="fa fa-trash-o"></i>
         </a></td>
         </tr>
