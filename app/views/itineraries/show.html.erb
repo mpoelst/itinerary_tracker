@@ -7,16 +7,17 @@
         <h3 class="panel-title">Itinerary #<%= @itinerary.id %></h3>
       </div>
       <div class="panel-body">
- <table>
+       <table>
         <tr>
           <th>Start date</th>
           <th>Itinerary name</th>
           <th>Action</th>
-          </tr>
-          <tr>
-            <td><%= @itinerary.start_date %></td>
-            <td><%= @itinerary.itinerary_name %></td>
-            <td>
+          <th>Add Day</th>
+        </tr>
+        <tr>
+          <td><%= @itinerary.start_date %></td>
+          <td><%= @itinerary.itinerary_name %></td>
+          <td>
             <div class="btn-group">
               <a href="/itineraries" class="btn btn-primary">
                 <i class="fa fa-chevron-left"></i>
@@ -29,38 +30,27 @@
               <a href="/delete_itinerary/<%= @itinerary.id %>" class="btn btn-danger" rel="nofollow">
                 <i class="fa fa-trash-o"></i>
               </a>
-              </tr>
-              </td>
-            </table>
-            </div>
-          </div>
-        </div>
-
-
-      <div class="table-responsive"  class="btn-group btn-group-justified">
-      <table>
-        <tr>
-          <th>Arrival Date</th>
-          <th>Origin Location</th>
-          <th>Destination Location</th>
-          <th>Action</th>
-        </tr>
-          <tr>
-          <div class="row">
-          <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">Add Day</h3>
-              </div>
-              <div class="panel-body">
-                <form action="/create_day" method="post" class="form-horizontal">
-                  <!-- Hidden input for authenticity token to protect from forgery -->
-                  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-            </div>
-            </div>
-            </div>
-            </div>
+          </td>
+          <td>
+              <a href="/itineraries/<%= @itinerary.id %>/edit" class="btn btn-success" method = "post" rel="nofollow">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+          </td>
             </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="table-responsive"  class="btn-group btn-group-justified">
+    <table>
+      <tr>
+        <th>Arrival Date</th>
+        <th>Origin Location</th>
+        <th>Destination Location</th>
+        <th>Action</th>
+
 
         <% @itinerary.days.each do |day| %>
         <tr>
@@ -68,37 +58,37 @@
           <td><%= day.origin_location_id %></td>
           <td><%= day.destination_location_id %></td>
           <td><a href="/days/<%= day.id %>" class="btn btn-primary">
-          <i class="fa fa-search-plus"></i>
-        </a>
-        <a href="/days/<%= day.id %>/edit" class="btn btn-warning">
-          <i class="fa fa-edit"></i>
-        </a>
-        <a href="/delete_day/<%= day.id %>" class="btn btn-danger">
-          <i class="fa fa-trash-o"></i>
-        </a></td>
+            <i class="fa fa-search-plus"></i>
+          </a>
+          <a href="/days/<%= day.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+          <a href="/delete_day/<%= day.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a></td>
         </tr>
         <% end %>
       </table>
-      </div>
-
-
-      <!-- Validation failure messages -->
-
-      <% @day = Day.new %>
-
-      <% if @day.errors.any? %>
-      <% @day.errors.full_messages.each do |message| %>
-      <div class="alert alert-dismissable alert-danger">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <%= message %>
-      </div>
-      <% end %>
-      <% end %>
-
-
-
     </div>
+
+
+    <!-- Validation failure messages -->
+
+    <% @day = Day.new %>
+
+    <% if @day.errors.any? %>
+    <% @day.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+    <% end %>
+    <% end %>
+
+
+
   </div>
+</div>
 </div>
 
 <!-- End responsive panel example -->
