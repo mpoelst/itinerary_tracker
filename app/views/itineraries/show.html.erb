@@ -1,7 +1,6 @@
 <!-- Responsive panel example-->
 
 <div class="row">
-  <div class="">
     <div class="panel panel-success">
       <div class="panel-heading">
         <h3 class="panel-title">Itinerary #<%= @itinerary.id %></h3>
@@ -18,7 +17,7 @@
           <td><%= @itinerary.start_date %></td>
           <td><%= @itinerary.itinerary_name %></td>
           <td>
-            <div class="btn-group">
+            <div class="table"  class="btn-group btn-group-justified">
               <a href="/itineraries" class="btn btn-primary">
                 <i class="fa fa-chevron-left"></i>
               </a>
@@ -33,43 +32,49 @@
           </td>
           <td>
               <a href="/itineraries/<%= @itinerary.id %>/edit" class="btn btn-success" method = "post" rel="nofollow">
-                <i class="fa fa-chevron-left"></i>
+                <i class="fa fa-calendar"></i>
               </a>
           </td>
             </tr>
         </table>
       </div>
     </div>
-  </div>
 
 
-  <div class="table-responsive"  class="btn-group btn-group-justified">
-    <table>
-      <tr>
-        <th>Arrival Date</th>
-        <th>Origin Location</th>
-        <th>Destination Location</th>
-        <th>Action</th>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+      <h3 class="panel-title">Days In Itinerary #<%= @itinerary.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="table"  class="btn-group btn-group-justified">
+          <table>
+            <tr>
+              <th>Arrival Date</th>
+              <th>Origin Location</th>
+              <th>Destination Location</th>
+              <th>Action</th>
 
 
-        <% @itinerary.days.each do |day| %>
-        <tr>
-          <td><%= day.arrival_date%></td>
-          <td><%= day.origin_location_id %></td>
-          <td><%= day.destination_location_id %></td>
-          <td><a href="/days/<%= day.id %>" class="btn btn-primary">
-            <i class="fa fa-search-plus"></i>
-          </a>
-          <a href="/days/<%= day.id %>/edit" class="btn btn-warning">
-            <i class="fa fa-edit"></i>
-          </a>
-          <a href="/delete_day/<%= day.id %>" class="btn btn-danger">
-            <i class="fa fa-trash-o"></i>
-          </a></td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
+              <% @itinerary.days.each do |day| %>
+              <tr>
+                <td><%= day.arrival_date%></td>
+                <td><%= day.origin_location_id %></td>
+                <td><%= day.destination_location_id %></td>
+                <td><a href="/days/<%= day.id %>" class="btn btn-primary">
+                  <i class="fa fa-search-plus"></i>
+                </a>
+                <a href="/days/<%= day.id %>/edit" class="btn btn-warning">
+                  <i class="fa fa-edit"></i>
+                </a>
+                <a href="/delete_day/<%= day.id %>" class="btn btn-danger">
+                  <i class="fa fa-trash-o"></i>
+                </a></td>
+              </tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div>
 
 
     <!-- Validation failure messages -->
