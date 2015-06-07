@@ -36,7 +36,7 @@ class ItinerariesController < ApplicationController
     @itinerary.user_id = current_user.id
 
     if @itinerary.save
-      redirect_to "/itineraries", :notice => "Itinerary updated successfully."
+      redirect_to "/itineraries/#{@itinerary.id}", :notice => "Itinerary updated successfully."
     else
       render 'edit'
     end

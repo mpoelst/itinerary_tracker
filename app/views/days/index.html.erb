@@ -23,46 +23,52 @@
         <h3 class="panel-title">Day #<%= day.id %></h3>
       </div>
       <div class="panel-body">
-      <table>
-        <tr>
-          <th>Itinerary</th>
-          <th>Arrival Date</th>
-          <th>Origin Location</th>
-          <th>Destination Location</th>
-          <th>Lodging Name</th>
-          <th>Lodging Address</th>
-          <th>Transportation</th>
-          <th>Events</th>
-          <th>Notes</th>
-          <th>Action</th>
-        </tr>
-        <tr>
-          <td><%= day.itinerary_id %></td>
-          <td><%= day.arrival_date %></td>
-          <td><%= day.origin_location_id %></td>
-          <td><%= day.destination_location_id %></td>
-          <td><%= day.lodging_name %></td>
-          <td><%= day.lodging_address %></td>
-          <td><%= day.transportation %></td>
-          <td><%= day.events %></td>
-          <td><%= day.notes %></td>
-          <td>
-        <div class="btn-group">
-          <a href="/days/<%= day.id %>" class="btn btn-primary">
-            <i class="fa fa-search-plus"></i>
-          </a>
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+              <dt>Lodging address</dt>
+              <dd><%= day.lodging_address %></dd>
 
-          <a href="/days/<%= day.id %>/edit" class="btn btn-warning">
-            <i class="fa fa-edit"></i>
-          </a>
+              <dt>Events</dt>
+              <dd><%= day.events %></dd>
 
-          <a href="/delete_day/<%= day.id %>" class="btn btn-danger" rel="nofollow">
-            <i class="fa fa-trash-o"></i>
-          </a>
+              <dt>Origin location</dt>
+              <dd><%= day.origin_location_id %></dd>
+
+              <dt>Transportation</dt>
+              <dd><%= day.transportation %></dd>
+
+              <dt>Arrival date</dt>
+              <dd><%= day.arrival_date %></dd>
+
+              <dt>Notes</dt>
+              <dd><%= day.notes %></dd>
+
+              <dt>Lodging name</dt>
+              <dd><%= day.lodging_name %></dd>
+
+              <dt>Itinerary</dt>
+              <dd><%= day.itinerary_id %></dd>
+
+              <dt>Destination location</dt>
+              <dd><%= day.destination_location_id %></dd>
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <a href="/itineraries/<%= day.itinerary_id %>" class="btn btn-primary">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+
+              <a href="/days/<%= day.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+
+              <a href="/delete_day/<%= day.id %>" class="btn btn-danger" rel="nofollow">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        </td>
-        </tr>
-        </table>
       </div>
     </div>
   </div>
