@@ -7,4 +7,5 @@ belongs_to :origin_location, :class_name => "Location", :foreign_key => "origin_
 belongs_to :destination_location, :class_name => "Location", :foreign_key => "destination_location_id"
 belongs_to :arrival_date, :class_name => "Arrival Date", :foreign_key => "arrival_date"
 has_many :days, dependent: :destroy
+has_many :locations, :through => :days
 end
