@@ -33,7 +33,7 @@
               <dd><%= day.events %></dd>
 
               <dt>Origin location</dt>
-              <dd><%= day.origin_location_id %></dd>
+              <dd><%= day.origin_location.location_name %></dd>
 
               <dt>Transportation</dt>
               <dd><%= day.transportation %></dd>
@@ -48,10 +48,10 @@
               <dd><%= day.lodging_name %></dd>
 
               <dt>Itinerary</dt>
-              <dd><%= day.itinerary_id %></dd>
+              <dd><%= day.itinerary.itinerary_name %></dd>
 
               <dt>Destination location</dt>
-              <dd><%= day.destination_location_id %></dd>
+              <dd><%= day.destination_location.location_name %></dd>
 
             </dl>
             <div class="btn-group btn-group-justified">
