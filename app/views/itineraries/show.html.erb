@@ -58,8 +58,8 @@
               <% @itinerary.days.each do |day| %>
               <tr>
                 <td><%= day.arrival_date%></td>
-                <td><%= day.origin_location_id %></td>
-                <td><%= day.destination_location_id %></td>
+                <td><%= day.origin_location.location_name %></td>
+                <td><%= day.destination_location.location_name %></td>
                 <td><a href="/days/<%= day.id %>" class="btn btn-primary">
                   <i class="fa fa-search-plus"></i>
                 </a>
