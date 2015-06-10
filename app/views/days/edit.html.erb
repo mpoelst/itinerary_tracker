@@ -12,8 +12,7 @@
 <!-- Responsive panel example -->
 
 <div class="row">
-  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
-    <div class="panel panel-default">
+    <div class="panel panel-success">
       <div class="panel-heading">
         <h3 class="panel-title">Edit Day #<%= @day.id %></h3>
       </div>
@@ -22,23 +21,20 @@
           <!-- Hidden input for authenticity token to protect from forgery -->
           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-          <!-- Label and input for lodging_address -->
-          <div class="form-group">
-            <label for="lodging_address" class="col-sm-2 control-label">
-              Lodging address
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="lodging_address" name="lodging_address" placeholder="Lodging address" class="form-control" value="<%= @day.lodging_address %>">
-            </div>
-          </div>
 
-          <!-- Label and input for events -->
+
+
+          <!-- Label and input for arrival_date -->
           <div class="form-group">
-            <label for="events" class="col-sm-2 control-label">
-              Events
+            <label for="arrival_date" class="col-sm-2 control-label">
+              Arrival date
             </label>
             <div class="col-sm-10">
-              <textarea id="events" name="events" placeholder="Events" class="form-control" rows="3"><%= @day.events %></textarea>
+              <div class="input-group date" id= "datetimepicker1">
+                    <input type="text" id="arrival_date" name="arrival_date" placeholder="Select Calendar for Date" class="form-control" value="<%= @day.arrival_date %>">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
             </div>
           </div>
 
@@ -48,37 +44,17 @@
               Origin location
             </label>
             <div class="col-sm-10">
-              <input type="text" id="origin_location_id" name="origin_location_id" placeholder="Origin location" class="form-control" value="<%= @day.origin_location_id %>">
+              <%= select_tag(:origin_location_id, options_from_collection_for_select(Location.all, :id, :location_name, @day.origin_location_id), :class => "form-control") %>
             </div>
           </div>
 
-          <!-- Label and input for transportation -->
+          <!-- Label and input for destination_location_id -->
           <div class="form-group">
-            <label for="transportation" class="col-sm-2 control-label">
-              Transportation
+            <label for="destination_location_id" class="col-sm-2 control-label">
+              Destination location
             </label>
             <div class="col-sm-10">
-              <textarea id="transportation" name="transportation" placeholder="Transportation" class="form-control" rows="3"><%= @day.transportation %></textarea>
-            </div>
-          </div>
-
-          <!-- Label and input for arrival_date -->
-          <div class="form-group">
-            <label for="arrival_date" class="col-sm-2 control-label">
-              Arrival date
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="arrival_date" name="arrival_date" placeholder="Arrival date" class="form-control" value="<%= @day.arrival_date %>">
-            </div>
-          </div>
-
-          <!-- Label and input for notes -->
-          <div class="form-group">
-            <label for="notes" class="col-sm-2 control-label">
-              Notes
-            </label>
-            <div class="col-sm-10">
-              <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @day.notes %></textarea>
+              <%= select_tag(:destination_location_id, options_from_collection_for_select(Location.all, :id, :location_name, @day.destination_location_id), :class => "form-control") %>
             </div>
           </div>
 
@@ -92,25 +68,57 @@
             </div>
           </div>
 
+          <!-- Label and input for lodging_address -->
+          <div class="form-group">
+            <label for="lodging_address" class="col-sm-2 control-label">
+              Lodging address
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="lodging_address" name="lodging_address" placeholder="Lodging address" class="form-control" value="<%= @day.lodging_address %>">
+            </div>
+          </div>
+
+
+          <!-- Label and input for transportation -->
+          <div class="form-group">
+            <label for="transportation" class="col-sm-2 control-label">
+              Transportation
+            </label>
+            <div class="col-sm-10">
+              <textarea id="transportation" name="transportation" placeholder="Transportation" class="form-control" rows="3"><%= @day.transportation %></textarea>
+            </div>
+          </div>
+
+          <!-- Label and input for events -->
+          <div class="form-group">
+            <label for="events" class="col-sm-2 control-label">
+              Events
+            </label>
+            <div class="col-sm-10">
+              <textarea id="events" name="events" placeholder="Events" class="form-control" rows="3"><%= @day.events %></textarea>
+            </div>
+          </div>
+
+          <!-- Label and input for notes -->
+          <div class="form-group">
+            <label for="notes" class="col-sm-2 control-label">
+              Notes
+            </label>
+            <div class="col-sm-10">
+              <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @day.notes %></textarea>
+            </div>
+          </div>
+
           <!-- Label and input for itinerary_id -->
           <div class="form-group">
             <label for="itinerary_id" class="col-sm-2 control-label">
               Itinerary
             </label>
             <div class="col-sm-10">
-              <input type="text" id="itinerary_id" name="itinerary_id" placeholder="Itinerary" class="form-control" value="<%= @day.itinerary_id %>">
+              <input type="hidden" id="itinerary_id" name="itinerary_id" placeholder="Itinerary" class="form-control" value="<%= @day.itinerary_id %>">
             </div>
           </div>
 
-          <!-- Label and input for destination_location_id -->
-          <div class="form-group">
-            <label for="destination_location_id" class="col-sm-2 control-label">
-              Destination location
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="destination_location_id" name="destination_location_id" placeholder="Destination location" class="form-control" value="<%= @day.destination_location_id %>">
-            </div>
-          </div>
 
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
@@ -124,8 +132,11 @@
         </form>
       </div>
     </div>
-  </div>
 </div>
 
-
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker();
+  });
+</script>
 <!-- End responsive panel example -->

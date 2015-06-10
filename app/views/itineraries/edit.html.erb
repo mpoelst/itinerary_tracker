@@ -21,21 +21,6 @@
           <!-- Hidden input for authenticity token to protect from forgery -->
           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-          <!-- Label and input for start_date -->
-          <div class="form-group">
-            <label for="start_date" class="col-sm-2 control-label">
-              Start date
-            </label>
-            <div class="col-sm-10">
-                <div class="input-group date" id= "datetimepicker1">
-                  <input type="text" id="start_date" name="start_date" placeholder="Start date" class="form-control" value="<%=  @itinerary.start_date %>">
-              <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-            </div>
-          </div>
-          </div>
-
 
           <!-- Label and input for itinerary_name -->
             <div class="form-group">
@@ -45,6 +30,21 @@
             <div class="col-sm-10">
               <textarea id="itinerary_name" name="itinerary_name" placeholder="Itinerary name" class="form-control" rows="1"><%= @itinerary.itinerary_name %></textarea>
             </div>
+          </div>
+
+          <!-- Label and input for start_date -->
+          <div class="form-group">
+            <label for="start_date" class="col-sm-2 control-label">
+              Start date
+            </label>
+            <div class="col-sm-10">
+                <div class="input-group date" id= "datetimepicker1">
+                  <input type="text" id="start_date" name="start_date" placeholder="06/18/2015" class="form-control" value="<%=  @itinerary.start_date.strftime("%m/%d/%Y") %>">
+              <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+            </div>
+          </div>
           </div>
 
           <div class="form-group">

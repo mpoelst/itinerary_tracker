@@ -8,7 +8,8 @@ class DaysController < ApplicationController
   end
 
   def new
-    @day = Day.new
+    itinerary = Itinerary.find_by({id: params[:itinerary_id]})
+    @day = Day.new(itinerary_id: itinerary.try(:id))
   end
 
   def create
@@ -48,7 +49,7 @@ class DaysController < ApplicationController
     @day.destination_location_id = params[:destination_location_id]
 
     if @day.save
-      redirect_to "/days", :notice => "Day updated successfully."
+      redirect_to "/days/#{@day.id}", :notice => "Day updated successfully."
     else
       render 'edit'
     end
@@ -59,6 +60,6 @@ class DaysController < ApplicationController
 
     @day.destroy
 
-    redirect_to "/days", :notice => "Day deleted."
+    redirect_to "/itineraries/#{@day.itinerary_id}", :notice => "Day deleted."
   end
 end

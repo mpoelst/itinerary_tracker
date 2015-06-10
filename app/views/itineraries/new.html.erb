@@ -28,7 +28,7 @@
         <label for="start_date" class="col-sm-2 control-label">Start Date</label>
         <div class="col-sm-10">
           <div class="input-group date" id= "datetimepicker1">
-            <input name="start_date" placeholder="Select Calendar for Date" type="text" class="form-control" id="start_date">
+            <input name="start_date" placeholder="Select Calendar for Date" type="text" class="form-control" id="start_date" value="<%= (@itinerary.start_date || Date.today).strftime("%m/%d/%Y") %>">
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-calendar"></span>
             </span>
@@ -63,10 +63,6 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  $(function () {
-    $('#datetimepicker1').datetimepicker();
-  });
-</script>
+
 
 <!-- End responsive panel example -->

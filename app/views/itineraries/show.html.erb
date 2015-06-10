@@ -31,7 +31,7 @@
               </a>
           </td>
           <td>
-              <a href="/days/new" class="btn btn-success" method = "post" rel="nofollow">
+              <a href="/days/new?itinerary_id=<%= @itinerary.id %>" class="btn btn-success" method = "post" rel="nofollow">
                 <i class="fa fa-calendar"></i>
               </a>
           </td>
@@ -55,7 +55,7 @@
               <th>Action</th>
 
 
-              <% @itinerary.days.each do |day| %>
+              <% @itinerary.days.order("arrival_date ASC").each do |day| %>
               <tr>
                 <td><%= day.arrival_date%></td>
                 <td><%= day.origin_location.location_name %></td>
