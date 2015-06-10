@@ -1,60 +1,60 @@
 <!-- Responsive panel example-->
 
 <div class="row">
-    <div class="panel panel-success">
-      <div class="panel-heading">
-        <h3 class="panel-title">Day #<%= @day.id %></h3>
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-12">
-            <dl class="dl-horizontal">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title">Day #<%= @day.id %></h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <dl class="dl-horizontal">
 
-              <dt>Arrival date</dt>
-              <dd><%= @day.arrival_date %></dd>
+            <dt>Arrival date</dt>
+            <dd><%= @day.arrival_date %></dd>
 
-              <dt>Itinerary</dt>
-              <dd><%= @day.itinerary.itinerary_name %></dd>
+            <dt>Itinerary</dt>
+            <dd><%= @day.itinerary.itinerary_name %></dd>
 
-              <dt>Origin location</dt>
-              <dd><%= @day.origin_location.location_name %></dd>
+            <dt>Origin location</dt>
+            <dd><%= @day.origin_location.location_name %></dd>
 
-              <dt>Destination location</dt>
-              <dd><%= @day.destination_location.location_name %></dd>
+            <dt>Destination location</dt>
+            <dd><%= @day.destination_location.location_name %></dd>
 
-              <dt>Lodging name</dt>
-              <dd><%= @day.lodging_name %></dd>
+            <dt>Lodging name</dt>
+            <dd><%= @day.lodging_name %></dd>
 
-              <dt>Lodging address</dt>
-              <dd><%= @day.lodging_address %></dd>
+            <dt>Lodging address</dt>
+            <dd><%= @day.lodging_address %></dd>
 
-              <dt>Transportation</dt>
-              <dd><%= @day.transportation %></dd>
+            <dt>Transportation</dt>
+            <dd><%= @day.transportation %></dd>
 
-              <dt>Events</dt>
-              <dd><%= @day.events %></dd>
+            <dt>Events</dt>
+            <dd><%= @day.events %></dd>
 
-              <dt>Notes</dt>
-              <dd><%= @day.notes %></dd>
+            <dt>Notes</dt>
+            <dd><%= @day.notes %></dd>
 
-            </dl>
-            <div class="btn-group btn-group-justified">
-              <a href="/itineraries/<%= @day.itinerary_id %>" class="btn btn-primary">
-                <i class="fa fa-chevron-left"></i>
-              </a>
+          </dl>
+          <div class="btn-group btn-group-justified">
+            <a href="/itineraries/<%= @day.itinerary_id %>" class="btn btn-primary">
+              <i class="fa fa-chevron-left"></i>
+            </a>
 
-              <a href="/days/<%= @day.id %>/edit" class="btn btn-warning">
-                <i class="fa fa-edit"></i>
-              </a>
+            <a href="/days/<%= @day.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
 
-              <a href="/delete_day/<%= @day.id %>" class="btn btn-danger" rel="nofollow">
-                <i class="fa fa-trash-o"></i>
-              </a>
-            </div>
+            <a href="/delete_day/<%= @day.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
 </div>
 
