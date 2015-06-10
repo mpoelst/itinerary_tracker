@@ -16,7 +16,7 @@
 <hr>
 
 <div class="row isotope-container">
-<% @days.each do |day| %>
+<% @days.order("arrival_date ASC").each do |day| %>
   <div class="isotope-item">
     <div class="panel panel-success">
       <div class="panel-heading">
