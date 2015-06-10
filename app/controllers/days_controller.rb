@@ -18,7 +18,7 @@ class DaysController < ApplicationController
     @day.events = params[:events]
     @day.origin_location_id = params[:origin_location_id]
     @day.transportation = params[:transportation]
-    @day.arrival_date = params[:arrival_date]
+    @day.arrival_date = Chronic.parse(params[:arrival_date])
     @day.notes = params[:notes]
     @day.lodging_name = params[:lodging_name]
     @day.itinerary_id = params[:itinerary_id]
@@ -42,7 +42,7 @@ class DaysController < ApplicationController
     @day.events = params[:events]
     @day.origin_location_id = params[:origin_location_id]
     @day.transportation = params[:transportation]
-    @day.arrival_date = params[:arrival_date]
+    @day.arrival_date = Chronic.parse(params[:arrival_date])
     @day.notes = params[:notes]
     @day.lodging_name = params[:lodging_name]
     @day.itinerary_id = params[:itinerary_id]
