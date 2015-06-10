@@ -23,7 +23,7 @@
           <th>Itinerary name</th>
           <th>Action</th>
         </tr>
-        <% @itineraries.each do |itinerary| %>
+        <% @itineraries.order("start_date ASC").each do |itinerary| %>
         <tr>
           <td><%= itinerary.start_date %></td>
           <td><%= itinerary.itinerary_name %></td>
