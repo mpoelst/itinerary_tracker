@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   validates :username, :presence => true, :uniqueness => true
   has_many :itineraries
+  has_many :locations, :through => :days
+  has_many :days, :through => :itineraries
 
   def name
     "#{first_name} #{last_name}"
