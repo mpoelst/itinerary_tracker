@@ -9,32 +9,33 @@
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
-              <dt>Lodging address</dt>
-              <dd><%= @day.lodging_address %></dd>
-
-              <dt>Events</dt>
-              <dd><%= @day.events %></dd>
-
-              <dt>Origin location</dt>
-              <dd><%= @day.origin_location.location_name %></dd>
-
-              <dt>Transportation</dt>
-              <dd><%= @day.transportation %></dd>
 
               <dt>Arrival date</dt>
               <dd><%= @day.arrival_date %></dd>
 
-              <dt>Notes</dt>
-              <dd><%= @day.notes %></dd>
+              <dt>Itinerary</dt>
+              <dd><%= @day.itinerary.itinerary_name %></dd>
+
+              <dt>Origin location</dt>
+              <dd><%= @day.origin_location.location_name %></dd>
+
+              <dt>Destination location</dt>
+              <dd><%= @day.destination_location.location_name %></dd>
 
               <dt>Lodging name</dt>
               <dd><%= @day.lodging_name %></dd>
 
-              <dt>Itinerary</dt>
-              <dd><%= @day.itinerary.itinerary_name %></dd>
+              <dt>Lodging address</dt>
+              <dd><%= @day.lodging_address %></dd>
 
-              <dt>Destination location</dt>
-              <dd><%= @day.destination_location.location_name %></dd>
+              <dt>Transportation</dt>
+              <dd><%= @day.transportation %></dd>
+
+              <dt>Events</dt>
+              <dd><%= @day.events %></dd>
+
+              <dt>Notes</dt>
+              <dd><%= @day.notes %></dd>
 
             </dl>
             <div class="btn-group btn-group-justified">
