@@ -38,9 +38,7 @@
               Start date
             </label>
             <div class="col-sm-10">
-                <div class="input-group date" id= "datetimepicker1">
                   <input type="text" id="start_date" name="start_date" placeholder="06/18/2015" class="form-control" value="<%=  @itinerary.start_date.strftime("%m/%d/%Y") %>">
-            </div>
           </div>
           </div>
 
@@ -64,10 +62,5 @@
 
 </div>
 
-<script type="text/javascript">
-  $(function () {
-    $('#datetimepicker1').datetimepicker();
-  });
-</script>
 
 <!-- End responsive panel example -->
