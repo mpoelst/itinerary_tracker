@@ -8,6 +8,15 @@ class User < ActiveRecord::Base
   has_many :locations, :through => :days
   has_many :days, :through => :itineraries
 
+  #def locations
+  #@locations ||= (
+  #  origin_ids = days.pluck(:origin_location_id)
+  #  destination_ids = days.pluck(:destination_location_id)
+  #  location_ids = [origin_ids, destination_ids].flatten.uniq
+  #  Location.where(id: location_ids)
+  #)
+#end
+
   def name
     "#{first_name} #{last_name}"
   end
