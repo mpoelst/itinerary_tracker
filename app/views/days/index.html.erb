@@ -28,10 +28,10 @@
               <dd><%= day.itinerary.itinerary_name %></dd>
 
               <dt>Origin location</dt>
-              <dd><%= day.origin_location.location_name %></dd>
+              <dd><%= day.origin_location.try(:location_name) %></dd>
 
               <dt>Destination location</dt>
-              <dd><%= day.destination_location.location_name %></dd>
+              <dd><%= day.destination_location.try(:location_name) %></dd>
 
               <dt>Lodging name</dt>
               <dd><%= day.lodging_name %></dd>
